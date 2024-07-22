@@ -17,18 +17,18 @@ public class Main {
         while (temp == 0) {
 
             int choose = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Welcome to my calculator!\n\n[1] - Sum\n[2] - Subtract\n[3] - Exit\n\n"));
+                    "Welcome to my calculator!\n\n[1] - Sum\n[2] - Subtract\n[3] - Multiplication\n[4] - Exit\n\n"));
 
-            if (choose == 3) {
+            if (choose == 4) {
                 JOptionPane.showMessageDialog(null, "Thanks for enjoying!");
                 temp = 1;
                 scanner.close();
             }
 
-            if (choose != 1 && choose != 2 && choose != 3) {
+            if (choose != 1 && choose != 2 && choose != 3 && choose != 4) {
                 JOptionPane.showMessageDialog(null, "You do something wrong, try another input in the next time.");
             }
-            if (choose == 1 || choose == 2) {
+            if (choose == 1 || choose == 2 || choose == 3) {
 
                 int num1 = 0;
                 int num2 = 0;
@@ -39,11 +39,21 @@ public class Main {
 
                     num2 = Integer.parseInt(JOptionPane.showInputDialog("Write your second number! [SUM]"));
 
-                } else {
+                }
+                if (choose == 2) {
 
                     num1 = Integer.parseInt(JOptionPane.showInputDialog("Write your first number! [SUBTRACT]"));
 
                     num2 = Integer.parseInt(JOptionPane.showInputDialog("Write your second number! [SUBTRACT]"));
+
+                }
+
+                if (choose == 3) {
+
+                    num1 = Integer.parseInt(JOptionPane.showInputDialog("Write your first number! [MULTIPLICATION]"));
+
+                    num2 = Integer.parseInt(JOptionPane.showInputDialog("Write your second number! [MULTIPLICATION]"));
+
 
                 }
 
@@ -61,7 +71,13 @@ public class Main {
                         r = num1 - num2;
                         JOptionPane.showMessageDialog(null, "The result is: " + r);
                         break;
+                    case 3:
+
+                        r = num1 * num2;
+                        JOptionPane.showMessageDialog(null, "The result is: " + r);
+                        break;
                 }
+
 
             }
 
